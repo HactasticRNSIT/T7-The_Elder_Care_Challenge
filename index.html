@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareNest AI</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+  <!-- TOAST NOTIFICATION -->
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast">
+  <span id="toast-icon" style="font-size:22px">🔔</span>
+  <div>
+    <div id="toast-title" style="font-weight:700;font-size:14px"></div>
+    <div id="toast-msg" style="font-size:12px;color:var(--text2)"></div>
+  </div>
+</div>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+
+    <div class="logo-area">
+      <div class="logo">
+        <div class="logo-icon">🏠</div>
+
+        <div>
+          <div class="logo-text">CareNest AI</div>
+          <div class="logo-sub">Predictive Elder Care</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="elder-profile">
+      <div class="elder-avatar">👴</div>
+
+      <div class="elder-name">
+        Ramesh Kumar
+      </div>
+
+      <div class="elder-id">
+        Age 72 · Bangalore
+      </div>
+
+      <div class="independence-badge">
+        Independence Score: 87%
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-section">
+
+      <div class="nav-label">Home</div>
+
+      <div class="nav-item active" onclick="navigate('landing')">
+        <span class="nav-icon">🏡</span>
+        Home
+      </div>
+
+      <div class="nav-item" onclick="navigate('dashboard')">
+        <span class="nav-icon">📊</span>
+        Dashboard
+      </div>
+
+      <div class="nav-item" onclick="navigate('risk')">
+        <span class="nav-icon">🎯</span>
+        AI Risk Predict
+      </div>
+    </div>
+
+    <div class="nav-section">
+
+      <div class="nav-label">Care</div>
+
+      <div class="nav-item" onclick="navigate('medication')">
+        <span class="nav-icon">💊</span>
+        Medication
+      </div>
+
+      <div class="nav-item" onclick="navigate('emergency')">
+        <span class="nav-icon">🆘</span>
+        Emergency
+      </div>
+
+      <div class="nav-item" onclick="navigate('voice')">
+        <span class="nav-icon">🎙️</span>
+        Voice AI
+      </div>
+    </div>
+
+    <div class="nav-section">
+
+      <div class="nav-label">Connect</div>
+
+      <div class="nav-item" onclick="navigate('caregiver')">
+        <span class="nav-icon">👨‍⚕️</span>
+        Caregiver Portal
+      </div>
+
+      <div class="nav-item" onclick="navigate('community')">
+        <span class="nav-icon">🤝</span>
+        Community
+      </div>
+
+      <div class="nav-item" onclick="navigate('twin')">
+        <span class="nav-icon">🧬</span>
+        Digital Twin
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+
+      <button class="icon-btn" onclick="toggleSidebar()">
+        ☰
+      </button>
+
+      <div class="topbar-title">
+        Care Dashboard
+      </div>
+
+      <div class="topbar-actions">
+
+        <button class="icon-btn" onclick="toggleTheme()">
+          🌙
+        </button>
+
+        <select class="lang-select">
+          <option>English</option>
+          <option>हिन्दी</option>
+          <option>ಕನ್ನಡ</option>
+        </select>
+
+      </div>
+    </div>
+
+    <!-- LANDING SCREEN -->
+    <section class="screen active" id="screen-landing">
+
+      <div class="hero">
+
+        <div>
+
+          <div class="hero-tag">
+            🤖 AI Powered Elder Care
+          </div>
+
+          <h1 class="hero-title">
+            Predictive Elder Care for Safer Independent Living
+          </h1>
+
+          <p class="hero-sub">
+            AI-powered monitoring, medication tracking,
+            emergency support and compassionate digital care.
+          </p>
+
+          <div class="hero-btns">
+
+            <button class="btn btn-primary">
+              Start Monitoring
+            </button>
+
+            <button class="btn btn-secondary">
+              Watch Demo
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="screen" id="screen-dashboard">
+
+      <div class="section-header">
+
+        <div>
+          <div class="section-title">
+            Health Dashboard
+          </div>
+
+          <div class="section-sub">
+            Real-time elder health overview
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid-4">
+
+        <div class="metric-card">
+          <div class="metric-icon">❤️</div>
+          <div class="metric-label">Heart Rate</div>
+          <div class="metric-value">72 BPM</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">😴</div>
+          <div class="metric-label">Sleep</div>
+          <div class="metric-value">87%</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">💧</div>
+          <div class="metric-label">Hydration</div>
+          <div class="metric-value">1.4L</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🚶</div>
+          <div class="metric-label">Steps</div>
+          <div class="metric-value">6,482</div>
+        </div>
+
+      </div>
+
+      <div class="grid-2" style="margin-top:20px">
+
+        <div class="card">
+          <div class="section-title">
+            Weekly Risk Analysis
+          </div>
+
+          <canvas id="riskChart"></canvas>
+        </div>
+
+        <div class="card">
+          <div class="section-title">
+            Medication Adherence
+          </div>
+
+          <canvas id="adherenceChart"></canvas>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- VOICE AI -->
+    <section class="screen" id="screen-voice">
+
+      <div class="card" style="text-align:center">
+
+        <div class="section-title">
+          Voice AI Companion
+        </div>
+
+        <div class="voice-rings">
+
+          <div class="voice-ring"></div>
+          <div class="voice-ring"></div>
+          <div class="voice-ring"></div>
+
+          <div class="voice-core">
+            🤖
+          </div>
+
+        </div>
+
+        <button class="voice-btn">
+          🎙️
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- EMERGENCY -->
+    <section class="screen" id="screen-emergency">
+
+      <div class="card" style="text-align:center">
+
+        <div class="section-title">
+          Emergency SOS
+        </div>
+
+        <button class="sos-btn" onclick="triggerSOS()">
+          🆘 SOS
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+  <script src="js/translations.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/emergency.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
